@@ -24,6 +24,8 @@ $text-color: #063251;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 body {
+    position: relative;
+    min-height: 100vh;
     background-color: $back-color;
     font-family: 'Roboto Condensed', sans-serif;
 }
@@ -53,23 +55,31 @@ header {
         &:hover {
             background-color: $main-color;
             color: white;
-
         }
     }
 }
 
+.price {
+    color: $main-color;
+}
 
 .card-item {
     letter-spacing: 2px;
     height: 150px;
-    width: 569px;
     display: flex;
     gap: 10px;
-    img {
+    .img-div {
         width: 225px;
+        height: 140px;
         border: 4px solid $main-color;
         border-radius: 6px;
+        img {
+            width:100%;
+            height: 100%;
+            object-fit: cover; 
+        }
     }
+
     .header-text {
         color: $text-color;
         display: flex;
@@ -91,11 +101,22 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 100px;
 }
 .main-div {
-    width: 70%;
+    width: 80%;
     display: grid;
     gap: 35px;
     grid-template-columns: repeat(auto-fit, minmax(569px, 1fr));
     grid-template-rows: 150px
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-block: 6px;
+    width: 100%;
+    text-align: center;
+    color: $text-color;
+    background-color: $main-color;
 }
